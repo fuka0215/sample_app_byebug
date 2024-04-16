@@ -33,13 +33,13 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    
+
     redirect_to lists_path
   end
 
   private
     # Only allow a list of trusted parameters through.
     def list_params
-      params.require(:list).permit(:title, :boby)
+      params.require(:list).permit(:title, :body)
     end
 end
